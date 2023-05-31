@@ -2,6 +2,19 @@ from flask import Flask, render_template, request, jsonify
 import numpy as np
 from tensorflow.keras.models import load_model
 from flask_ngrok import run_with_ngrok
+import json
+
+with open('dataset.json') as file:
+    dataset = json.load(file)
+for data in dataset:
+    tag = data['tag']
+    patterns = data['patterns']
+    responses = data['responses']
+    
+    #Lakukan pemrosesan atau manipulasi sesuai kebutuhan
+    print("Tag:", tag)
+    print("Patterns:", patterns)
+    print("Responses:", responses)
 
 app = Flask(__name__)
 model = None
