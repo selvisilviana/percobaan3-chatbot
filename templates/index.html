@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Insightful Muslim Bot</title>
+    <title>CyberSafeGuard</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,15 +32,16 @@
       <div class="container">
         <!-- Logo -->
         <div class="navbar-header">
-          <a class="navbar-brand" href="#halamanku">Insighfull<span>MuslimBot</span>.</a>
+          <a class="navbar-brand" href="#halamanku">CyberSafe<span>Guard</span>.</a>
         </div>
 
         <!-- Daftar Halaman -->
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#about">Home</a></li>
-            <li><a href="#aplikasi">MuslimBot</a></li>
-            <li><a href="contact">Kontak</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#detection">Phishing Detection</a></li>
+            <li><a href="/chatbot">SafeBot</a></li>
             <li><a href="#team">Team</a></li>
           </ul>
         </div>
@@ -64,9 +65,9 @@
           <div>
             <!-- Welcome -->
             <h2 style="color: #fff; font-size: 70px;">Welcome to</h2>
-            <h3 style="color: #fff; font-size: 30px;"><b>Insighful Muslim Bot</b></h3><br>
+            <h3 style="color: #fff; font-size: 30px;"><b>CyberSafeGuard</b></h3><br>
             <p style="text-align: justify;text-justify: inter-word; color: #fff; font-size: 20px;">
-              Tips Berpakaian Muslimah <br> Make your dream fashion come true
+              Safeguarding Your Digital Frontier <br> Protecting You in the Digital Realm
             </p>
             <br>
     
@@ -93,12 +94,12 @@
 
         <div class="col-sm-6">
           <!-- Deskripsi Aplikasi -->
-                  <h2>Insighfull Muslim Bot</h2><br>
-          <h4>Insighful Bot</h4>
+                  <h2>CyberSafeGuard</h2><br>
+          <h4>Phising Detection</h4>
           <p style="text-align: justify;text-justify: inter-word;">
-            nsightfulMuslimBot hadir untuk memberikan bantuan dan panduan seputar cara berpakaian Muslim, khususnya untuk perempuan. Kami dapat memberikan pemahaman tentang prinsip-prinsip berpakaian dalam Islam, serta memberikan saran dan tips tentang cara memadukan busana, hijab, dan aksesoris lainnya secara sesuai dengan ajaran Islam.
-
-            Kami juga dapat memberikan rekomendasi produk hijab yang relevan, termasuk harga dan gambar, untuk memenuhi kebutuhan pengguna. Meskipun kami tidak dapat menyediakan daftar produk secara real-time karena keterbatasan akses ke informasi terkini, kami dapat memberikan panduan umum tentang merek dan jenis-jenis hijab yang tersedia di pasaran. Namun, penting untuk diingat bahwa preferensi dan kebutuhan setiap individu dapat bervariasi, dan kami mendorong pengguna untuk mempertimbangkan nilai-nilai Islam, kenyamanan, dan gaya pribadi saat memilih busana dan aksesoris.
+            Aplikasi ini dibuat untuk menentukan membantu pengguna internet mendeteksi URL yang terindikasi phishing.
+            Pengguna hanya cukup menginputkan url yang dicurigai untuk dapat mengetahui klasifikasi phishing dan tidak phishing.
+            Fitur ini diharapkan dapat membantu mengurangi resiko <i>cybercrime</i> khususnya kejahatan phishing.
           </p>
           <br>
 
@@ -122,11 +123,11 @@
 
         <div class="col-sm-6">
           <!-- Deskripsi Aplikasi -->
-          <h4>Insighful Bot</h4>
+          <h4>SafeBot</h4>
           <p style="text-align: justify;text-justify: inter-word;">
-            Aplikasi ini dibuat untuk menentukan membantu para muslimah menentukan model pakaian terbaik <i>Insighfull Muslim Bot</i>.
-            Pengguna hanya cukup menginputkan pertanyaan kemudian Muslim Bot akan memberikan jawaban mengenai pertanyaan pengguna.
-            Fitur ini diharapkan dapat membantu memerikan tips berpakaian muslim <i>cybercrime</i> dan menjadikan fashion muslim sebagai tren 
+            Aplikasi ini dibuat untuk menentukan membantu pengguna internet mendapatkan pengetahuan mengenai <i>cyber security</i> dan tips and tricks untuk menghindari <i>cybercrime</i>.
+            Pengguna hanya cukup menginputkan pertanyaan kemudian SafeBot akan memberikan jawaban mengenai pertanyaan pengguna.
+            Fitur ini diharapkan dapat membantu mengurangi resiko <i>cybercrime</i> dan meningkatkan kesadaran pengguna internet terhadap kejahatan dunia maya.
           </p><br>
 
           <!-- Tombol Mulai -->
@@ -141,6 +142,44 @@
       </div><br>
     </div>
 
+    <!-- Bagian Halaman (Aplikasi phishing detection) -->
+    <div id="detection" data-bs-spy="scroll" data-bs-target="#navgo" data-bs-offset="0" class="scrollspy-example" class="container-fluid" tabindex="0">
+        <br>
+        <br>
+        <div class="row">
+            <h2 class="centered">Phishing Detection</h2>
+            <div class="col-sm-6">
+                </br>
+                <img style="margin-left: 100px;" src={{ url_for('static', filename='/images/image1.png') }} width="700" height="500"></img>
+            </div>
+            <div class="col-sm-6">
+                <br><br><br><br><br><br><br>
+                <!-- Input URL dari Pengguna -->
+                <div class="col-lg-6" style="margin-left: 50px;">
+    
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon3">Input URL</span>
+                        <input type="text" class="form-control" id="input_link" onInput="$('#inputVal_link').html($(this).val())" placeholder="example.com/users/" aria-label="https://example.com/users/" aria-describedby="basic-addon3">
+                    </div>  <br><br>               
+                    <button type="submit" id="prediksi_submit" class="btn btn-outline-secondary" style="background-color:#4e6e81; color: #fff">Predict</button>
+                    </br>
+                </div>
+                <!-- Bagian Halaman untuk Hasil Prediksi -->
+                <!-- <div id="hasil_prediksi" align="center">
+                        Hasil Prediksi akan ditampilkan di sini
+                </div> -->
+                <div id="hasil_prediksi" align="center">
+                  <h3 class="text-center">Hasil Prediksi</h2>
+                    {% if hasil_prediksi %}
+                    <p class="text-center">Link tersebut diprediksi <span class="fw-bold">{{hasil_prediksi}}</span></p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+
     <!-- Bagian Halaman (Anggota Kelompok) -->
     <div id="team" class="container-fluid text-center">
         <br>
@@ -149,27 +188,27 @@
         <br>
         <div class="row slideanim">
             <div class="col-sm-6">
-                <img src={{ url_for('static', filename='/images/7.png') }}  width="200" height="200">
-                <h4>Adi Gunawan</h4>
-                <p>Universitas Catur Insan Cendekia</p>
+                <img src={{ url_for('static', filename='/images/Rezak.jpg') }}  width="200" height="200">
+                <h4>ABDUL REZAK</h4>
+                <p>Universitas Muhammadiyah Jakarta</p>
             </div>
             <div class="col-sm-6">
-                <img src={{ url_for('static', filename='/images/8.png') }}  width="200" height="200">
-                <h4>Selvi Silviana</h4>
-                <p>STMIK IKMI Cirebon</p>
+                <img src={{ url_for('static', filename='/images/fikri.jpg') }}  width="200" height="200">
+                <h4>HAFIDZ NAWWAR FIKRI</h4>
+                <p>Universitas Singaperbangsa Karawang</p>
             </div>
         </div>
         <br><br><br>
         <div class="row slideanim">
             <div class="col-sm-6">
-                <img src={{ url_for('static', filename='/images/9.png') }}  width="200" height="200">
-                <h4>Ziam Agista Mutmainah</h4>
+                <img src={{ url_for('static', filename='/images/hilya.jpg') }}  width="200" height="200">
+                <h4>HILYA ANBIYANI FITRI MUHYIDIN</h4>
                 <p>Universitas Pendidikan Indonesia</p>
             </div>
             <div class="col-sm-6">
-                <img src={{ url_for('static', filename='/images/10.png') }}  width="200" height="200">
-                <h4>Yoga Adiansah</h4>
-                <p>STMIK Bandung</p>
+                <img src={{ url_for('static', filename='/images/Rafi.jpg') }}  width="200" height="200">
+                <h4>MUHAMMAD MIFTAHUR RAFI</h4>
+                <p>Universitas Muhammadiyah Jakarta</p>
             </div>
         </div>
     </div>
@@ -180,7 +219,7 @@
             <span class="glyphicon glyphicon-chevron-up"></span>
         </a>
         <p>Insightful Ideators<br> Insight-1</p>
-        <span class="copyright">© 2023 <a href="index.html" rel="rev-logo">cInsighful Muslim Bot</a> All Rights Reserved</span> </div>
+        <span class="copyright">© 2023 <a href="index.html" rel="rev-logo">cybersafeguard</a> All Rights Reserved</span> </div>
     </footer>
 
     <!-- JavaScript untuk Animasi Scroll dan Prediksi Model -->
