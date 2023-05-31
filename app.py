@@ -4,17 +4,34 @@ from tensorflow.keras.models import load_model
 from flask_ngrok import run_with_ngrok
 import json
 
-with open('dataset.json') as file:
-    dataset = json.load(file)
-for data in dataset:
-    tag = data['tag']
-    patterns = data['patterns']
-    responses = data['responses']
+def load_dataset():
+    with open('dataset.json') as file:
+        dataset = json.load(file)
+    return dataset
+
+def lstm_predict(input_text):
+    # Lakukan transformasi pada input_text jika diperlukan
     
-    #Lakukan pemrosesan atau manipulasi sesuai kebutuhan
-    print("Tag:", tag)
-    print("Patterns:", patterns)
-    print("Responses:", responses)
+    # Lakukan prediksi menggunakan model LSTM dan dataset JSON
+    # Misalnya, mencari tag yang sesuai dengan input_text
+    tag = None
+    for data in dataset:
+        for pattern in data['patterns']:
+            if pattern in input_text:
+                tag = data['tag']
+                break
+    
+    # Lakukan post-processing pada hasil prediksi jika diperlukan
+    # Misalnya, mencari respons berdasarkan tag
+    response = None
+    if tag:
+        for data in dataset:
+            if data['tag'] == tag:
+                responses = data['responses']
+                response = np.random.choice(responses)
+                break
+    
+    return response
 
 app = Flask(__name__)
 model = None
